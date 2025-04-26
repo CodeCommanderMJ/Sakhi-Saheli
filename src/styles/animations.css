@@ -1,0 +1,18 @@
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+.shake-animation {
+  animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
