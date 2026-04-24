@@ -1,14 +1,31 @@
-# Sakhi Saheli– Smart Safety Device for Women
+# Sakhi Saheli – IoT-Based Women Safety System
 
-**Sakhi** is a smart safety device designed to ensure women’s personal security by sending real-time SOS alerts during emergencies. Using **Arduino, GPS, GSM, and motion sensors**, Sakhi allows users to instantly notify trusted contacts and authorities with their location, providing peace of mind and quick assistance.
+Sakhi Saheli is a real-time IoT-based safety device designed to provide instant emergency assistance to women. The system integrates embedded hardware, communication modules, and cloud connectivity to ensure reliable SOS alert delivery even in low-network conditions.
 
-## Features
-- **Instant SOS Alerts:** One-button emergency alerts to pre-defined contacts.
-- **Real-time Location Tracking:** GPS-enabled location sent via GSM.
-- **Motion Detection:** Detects unusual movement or falls for added safety.
-- **Reliable Communication:** Immediate notification to trusted contacts and authorities.
-  
-##How the full system works end-to-end
+---
+
+## 🚨 Key Features
+
+- **Multi-Trigger SOS System**
+  - Panic button activation
+  - Fall detection using MPU6050
+  - Abnormal pulse/health trigger
+
+- **Dual Communication Mode**
+  - GSM (SIM800L) for SMS + call (offline reliability)
+  - Internet-based alerts via Firebase + mobile app
+
+- **Real-Time GPS Tracking**
+  - Live location fetched using Neo-6M GPS module
+  - Google Maps link shared via SMS
+
+- **Edge + Cloud Hybrid Architecture**
+  - ESP32 handles real-time decision making
+  - Firebase enables live tracking and notifications
+
+---
+
+## ⚙️ System Architecture
 Woman wearing the device is in danger
             ↓
    Button pressed / Fall detected / Abnormal pulse
@@ -32,38 +49,86 @@ Woman wearing the device is in danger
   until the woman marks herself safe
 
 
-## Tech Stack
-- **Hardware:** Arduino Uno, GPS Module (Neo-6M), GSM Module (SIM800L), MPU6050 Motion Sensor, Panic Button, Li-ion Battery.
-- **Software:** Arduino IDE, C/C++ for microcontroller programming.
-- **Connectivity:** GSM for SMS alerts, GPS for location tracking.
-
-## How It Works
-1. The user presses the **panic button** in an emergency.
-2. The device reads the **GPS location**.
-3. Sends an **SMS alert** with the user’s location to trusted contacts.
-4. Optional **motion detection** triggers alerts in case of falls or unusual activity.
-
-## Hackathon Highlights
-- **Portable & Affordable:** Compact design, low-cost components.
-- **Real-time Alerts:** Immediate communication with minimal delay.
-- **User Privacy:** Alerts only go to trusted contacts, no unnecessary data sharing.
-- **Scalable:** Can integrate with mobile apps or community safety networks.
-
-## Setup Instructions
-1. Connect the hardware modules (Arduino, GPS, GSM, motion sensor, panic button).
-2. Upload the Arduino code via Arduino IDE.
-3. Configure emergency contact numbers in the code.
-4. Power the device with a 3.7V Li-ion battery.
-
-## Future Enhancements
-- Mobile app integration for remote monitoring.
-- Cloud-based alert storage and analytics.
-- AI-powered anomaly detection for enhanced safety.
 
 ---
 
-**Sakhi** empowers women with **real-time safety**, **reliable communication**, and **peace of mind**—a must-have for personal security.  
+## 🔁 End-to-End Workflow
+
+1. Emergency triggered (button / fall / abnormal health)
+2. ESP32 reads GPS coordinates
+3. Parallel execution:
+   - GSM sends SMS + auto-call
+   - Firebase updates live location
+4. Contacts receive:
+   - SMS with Google Maps link
+   - Phone call
+   - App notification
+5. Live tracking continues until safe status is updated
+
+---
+
+## 🛠️ Hardware Components
+
+- ESP32 Microcontroller  
+- Neo-6M GPS Module  
+- SIM800L GSM Module  
+- MPU6050 Accelerometer (Fall Detection)  
+- Pulse Sensor (Health Monitoring)  
+- Panic Button  
+- 3.7V Li-ion Battery + Power Module  
+
+---
+
+## 💻 Software Stack
+
+- Arduino IDE (Embedded Programming)
+- C/C++ (ESP32 Firmware)
+- Firebase (Realtime Database + FCM)
+- Mobile App / Web Dashboard (for tracking)
+
+---
+
+## 🔧 Key Engineering Highlights
+
+- Implemented **fail-safe communication** using GSM when internet is unavailable  
+- Designed **real-time interrupt-based SOS trigger system**  
+- Optimized power usage for **portable wearable deployment**  
+- Achieved **parallel alert system (SMS + Cloud)** for redundancy  
+
+---
+
+## 🚀 Setup Instructions
+
+1. Connect ESP32 with GPS, GSM, and sensors  
+2. Upload firmware using Arduino IDE  
+3. Configure emergency contacts and Firebase credentials  
+4. Power using Li-ion battery  
+
+---
+
+## 📈 Future Enhancements
+
+- AI-based threat detection using sensor patterns  
+- Voice activation SOS system  
+- Miniaturized PCB for wearable design  
+
+---
+
+## 🏆 Highlights
+
+- Real-time safety system with dual communication reliability  
+- Designed for low-connectivity environments  
+- Scalable for smart city and public safety integration  
+
+---
+
+## 📌 Impact
+
+Sakhi Saheli provides a **low-cost, reliable, and scalable safety solution**, ensuring women can access immediate help in critical situations.
+
 
 <img width="1407" height="767" alt="image" src="https://github.com/user-attachments/assets/7f034360-bd89-45dc-9049-163c783cdf2b" />
 <img width="1536" height="1024" alt="WhatsApp Image 2026-04-24 at 2 05 33 PM" src="https://github.com/user-attachments/assets/ceb200ea-aade-4894-b105-499829c65f84" />
 <img width="1600" height="900" alt="WhatsApp Image 2026-04-24 at 4 02 39 PM (1)" src="https://github.com/user-attachments/assets/24d52dbd-b1ef-4f70-894e-0e351c96be30" />
+
+<img width="1023" height="1536" alt="image" src="https://github.com/user-attachments/assets/6aafcdab-2b43-4edc-bda8-b9f2c78c6550" />
