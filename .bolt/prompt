@@ -1,5 +1,17 @@
-For all designs I ask you to make, have them be beautiful, not cookie cutter. Make webpages that are fully featured and worthy for production.
-
-By default, this template supports JSX syntax with Tailwind CSS classes, React hooks, and Lucide React for icons. Do not install other packages for UI themes, icons, etc unless absolutely necessary or I request them.
-
-Use icons from lucide-react for logos.
+Device powers on
+      ↓
+ESP32 starts reading:
+  - Accelerometer (continuous)
+  - Pulse sensor (continuous)
+  - Button state (interrupt-based)
+      ↓
+Any trigger fires? (fall / abnormal pulse / button press)
+      ↓
+YES →
+  1. GPS module fetches current coordinates
+  2. SIM800L sends SMS to 3 saved emergency numbers:
+     "ALERT: [Name] needs help! Location: maps.google.com/?q=LAT,LONG"
+  3. SIM800L auto-dials the first emergency contact
+  4. If ESP32 is connected to WiFi → also pushes alert to Firebase
+      ↓
+NO → keep monitoring in loop
