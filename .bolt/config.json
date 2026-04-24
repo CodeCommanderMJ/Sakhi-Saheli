@@ -1,3 +1,71 @@
 {
-  "template": "bolt-vite-react-ts"
+  "project": {
+    "name": "Sakhi Saheli",
+    "version": "1.0.0",
+    "description": "IoT-based Women Safety Wearable System"
+  },
+
+  "device": {
+    "device_id": "SS_ESP32_001",
+    "wifi_ssid": "YOUR_WIFI_NAME",
+    "wifi_password": "YOUR_WIFI_PASSWORD",
+    "update_interval_ms": 5000
+  },
+
+  "gps": {
+    "enabled": true,
+    "module": "NEO-6M",
+    "baud_rate": 9600
+  },
+
+  "gsm": {
+    "enabled": true,
+    "module": "SIM800L",
+    "baud_rate": 9600,
+    "emergency_numbers": [
+      "+919999999999",
+      "+918888888888"
+    ]
+  },
+
+  "sensors": {
+    "pulse_sensor": {
+      "enabled": true,
+      "threshold_bpm": 120
+    },
+    "temperature_sensor": {
+      "enabled": true,
+      "threshold_celsius": 38
+    },
+    "accelerometer": {
+      "enabled": true,
+      "module": "ADXL345",
+      "fall_threshold": 2.5
+    }
+  },
+
+  "sos": {
+    "button_enabled": true,
+    "auto_trigger": true,
+    "send_sms": true,
+    "send_location": true
+  },
+
+  "camera": {
+    "enabled": true,
+    "module": "ESP32-CAM",
+    "capture_on_sos": true
+  },
+
+  "cloud": {
+    "platform": "Firebase",
+    "api_url": "https://your-project.firebaseio.com/",
+    "auth_token": "YOUR_FIREBASE_API_KEY"
+  },
+
+  "alerts": {
+    "send_push_notification": true,
+    "send_sms": true,
+    "send_email": false
+  }
 }
